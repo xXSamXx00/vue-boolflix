@@ -1,7 +1,7 @@
 <template>
     <header>
         <SearchBox :filmSearch="searchText" @search_film="searchFilm"/>
-        <ul class="movies">
+        <ul class="movies mt-4">
             <li class="movie" v-for="film in films" :key="film.id">
                 <p>{{ film.title }}</p>
                 <p>{{ film.original_title }}</p>
@@ -46,5 +46,16 @@ export default {
 header {
     height: 100px;
     background-color: grey;
+    .movies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .movie {
+            width: 400px;
+            background-color: cornflowerblue;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    }
 }
 </style>
