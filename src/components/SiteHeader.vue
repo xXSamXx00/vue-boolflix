@@ -2,7 +2,7 @@
     <header>
         <SearchBox :filmSearch="searchText" @search_film="searchFilm"/>
         <ul class="movies mt-4">
-            <li class="movie" v-for="film in films" :key="film.id">
+            <li class="movie mb-3" v-for="film in films" :key="film.id">
                 <p>{{ film.title }}</p>
                 <p>{{ film.original_title }}</p>
                 <p>{{ film.original_language }}</p>
@@ -35,7 +35,7 @@ export default {
                     this.films = r.data.results
                 }
             ).catch(e => {
-                console.log(e, "DIO PORCO!");
+                console.log(e, "ERROR!");
             })
         }
     }
@@ -50,11 +50,13 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        list-style: none;
         .movie {
             width: 400px;
             background-color: cornflowerblue;
             border: 1px solid black;
             border-radius: 5px;
+            padding: 16px 20px 0;
         }
     }
 }
