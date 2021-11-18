@@ -1,16 +1,39 @@
 <template>
   <div id="app">
-    <SiteHeader/>
+    <SiteHeader :filmSearch="searchText" @search_film="searchFilm"/>
+    <SiteMain :films="films"/>
   </div>
 </template>
 
 <script>
 import SiteHeader from './components/SiteHeader.vue'
+import SiteMain from './components/SiteMain.vue'
+import axios from 'axios'
 
 export default {
   name: 'App',
   components: {
-    SiteHeader
+    SiteHeader,
+    SiteMain
+  },
+  data() {
+    return {
+      films: [],
+      searchText: ""
+    }
+  },
+  methods: {
+    searchFilm(text) {
+      this.searchText = text
+        axios
+          .get(`https://api.themoviedb.org/3/search/movie?api_key=213b9fdb9078ddf64c88787abf1f0f84&language=it-IT&query=${this.searchText}&page=1&include_adult=true`)
+          .then(r => {
+            this.films = r.data.results
+          }
+        ).catch(e => {
+          console.log(e, "ERROR!");
+        })
+      }
   }
 }
 </script>

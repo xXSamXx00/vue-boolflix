@@ -1,42 +1,17 @@
 <template>
     <header>
-        <SearchBox :filmSearch="searchText" @search_film="searchFilm"/>
-        <ul class="movies mt-4">
-            <li class="movie mb-3" v-for="film in films" :key="film.id">
-                <p>{{ film.title }}</p>
-                <p>{{ film.original_title }}</p>
-                <p>{{ film.original_language }}</p>
-                <p>{{ film.vote_average }}</p>
-            </li>
-        </ul>
+        <div class="search text-center">
+        <input v-model="filmSearch" type="search" placeholder="Cerca un Film">
+        <button class="btn btn-primary ms-4" @click="$emit('search_film', filmSearch)">Cerca</button>
+    </div>
     </header>
 </template>
 
 <script>
-import SearchBox from './SearchBox.vue'
-import axios from 'axios'
-
 export default {
-    components: {
-        SearchBox
-    },
     data() {
         return {
-            films: [],
-            searchText: ""
-        }
-    },
-    methods: {
-        searchFilm(text) {
-            this.searchText = text
-            axios
-                .get(`https://api.themoviedb.org/3/search/movie?api_key=213b9fdb9078ddf64c88787abf1f0f84&language=it-IT&query=${this.searchText}&page=1&include_adult=true`)
-                .then(r => {
-                    this.films = r.data.results
-                }
-            ).catch(e => {
-                console.log(e, "ERROR!");
-            })
+            filmSearch: ""
         }
     }
 }
@@ -46,18 +21,18 @@ export default {
 header {
     height: 100px;
     background-color: grey;
-    .movies {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        list-style: none;
-        .movie {
-            width: 400px;
-            background-color: cornflowerblue;
-            border: 1px solid black;
-            border-radius: 5px;
-            padding: 16px 20px 0;
-        }
+    .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    input {
+        height: 38px;
+        width: 300px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        padding: 10px;
     }
+}
 }
 </style>
