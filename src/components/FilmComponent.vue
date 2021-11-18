@@ -2,8 +2,9 @@
     <li class="movie mb-3">
         <p>{{ filmElement.title }}</p>
         <p>{{ filmElement.original_title }}</p>
-        <p>{{ filmElement.original_language }}</p>
         <p>{{ filmElement.vote_average }}</p>
+        <img height="50" :src="`../assets/${filmElement.original_language}.png`" alt="">
+        <p>{{ filmElement.original_language }}</p>
     </li>
 </template>
 
