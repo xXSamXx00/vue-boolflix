@@ -12,7 +12,8 @@ export default {
         FilmComponent
     },
     props: {
-        films: Array
+        films: Array,
+        series: Array
     }
 }
 </script>

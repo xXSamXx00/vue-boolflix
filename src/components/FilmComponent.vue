@@ -3,8 +3,7 @@
         <p>{{ filmElement.title }}</p>
         <p>{{ filmElement.original_title }}</p>
         <p>{{ filmElement.vote_average }}</p>
-        <img height="50" :src="`../assets/${filmElement.original_language}.png`" alt="">
-        <p>{{ filmElement.original_language }}</p>
+        <img height="30" class="mb-3" :src="require(`../assets/${filmElement.original_language}.png`)" alt="">
     </li>
 </template>
 
