@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <font-awesome-icon :icon="['fab', 'font-awesome']" />
     <SiteHeader :filmSearch="searchText" @search_film="searchFilm"/>
     <SiteMain :films="films" :series="series"/>
   </div>

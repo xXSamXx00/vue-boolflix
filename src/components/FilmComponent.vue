@@ -1,8 +1,9 @@
 <template>
     <li class="movie mb-3">
+        <img :src="`https://image.tmdb.org/t/p/w342/${filmElement.poster_path}`" alt="">
         <p>{{ filmElement.title }}</p>
         <p>{{ filmElement.original_title }}</p>
-        <p>{{ filmElement.vote_average }}</p>
+        <p>{{ Math.round(filmElement.vote_average / 2) }}</p>
         <img height="30" class="mb-3" :src="require(`../assets/${filmElement.original_language}.png`)" alt="">
     </li>
 </template>

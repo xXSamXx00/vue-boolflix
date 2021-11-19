@@ -1,8 +1,9 @@
 <template>
     <li class="serie mb-3">
+        <img :src="`https://image.tmdb.org/t/p/w342/${serieElement.poster_path}`" alt="">
         <p>{{ serieElement.name }}</p>
         <p>{{ serieElement.original_name }}</p>
-        <p>{{ serieElement.vote_average }}</p>
+        <p>{{ Math.round(serieElement.vote_average / 2) }}</p>
         <img height="30" class="mb-3" :src="require(`../assets/${serieElement.original_language}.png`)" alt="">
     </li>
 </template>
