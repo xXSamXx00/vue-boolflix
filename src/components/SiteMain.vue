@@ -1,11 +1,11 @@
 <template>
     <div>
         <h2 class="text-center">Film</h2>
-        <div class="movies mt-4">
+        <div class="row mt-4">
             <FilmComponent v-for="film in films" :key="film.id" :filmElement="film"/>
         </div>
         <h2 class="text-center">Serie TV</h2>
-        <div class="series mt-4">
+        <div class="row mt-4">
             <SerieElement v-for="serie in series" :key="serie.id" :serieElement="serie"/>
         </div>
     </div>
@@ -31,11 +31,7 @@ export default {
 h2 {
     font-size: 20px;
 }
-.movies,
-.series {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    list-style: none;  
+.row {
+    margin: 0 !important;
 }
 </style>

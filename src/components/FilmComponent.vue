@@ -1,7 +1,7 @@
 <template>
-    <div class="movie col-3 mb-3">
+    <div class="movie col-2 mb-3">
         <div class="card_element">
-            <div class="img" >
+            <div class="img">
                 <img v-if="filmElement.poster_path != null" :src="`https://image.tmdb.org/t/p/w342/${filmElement.poster_path}`" alt>
                 <img width="342" v-else src="https://media.istockphoto.com/vectors/internet-error-page-not-found-in-vertical-orientation-for-mobile-a-vector-id1252582562?k=20&m=1252582562&s=170667a&w=0&h=O1wwtikUXIdVVBKzIEDHvd9MDnwoeuClx90cuIq1SEo=" alt>
             </div>
@@ -35,8 +35,10 @@ export default {
 }
 
 .movie {
-    border: 1px solid black;
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 16px 20px 0;
 }
 </style>

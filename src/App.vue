@@ -63,9 +63,12 @@ body {
 .text_over {
   display: none;
   width: 320px;
+  text-align: center;
 }
 
 .card_element {
+  display: flex;
+  justify-content: center;
   &:hover {
     .img {
       display: none;
