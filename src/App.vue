@@ -38,6 +38,7 @@ export default {
         .get(`https://api.themoviedb.org/3/search/tv?api_key=213b9fdb9078ddf64c88787abf1f0f84&language=it-IT&page=1&query=${this.searchText}&include_adult=true`)
         .then(r => {
           this.series = r.data.results
+          this.films.push(this.series)
         }
       ).catch(e => {
         console.log(e, "ERROR!");
