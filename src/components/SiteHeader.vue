@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
 header {
     height: 100px;
-    background-color: grey;
+    background-color: black;
     .search {
     display: flex;
     align-items: center;

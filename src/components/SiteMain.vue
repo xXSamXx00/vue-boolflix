@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="text-center">Film<i class="fas fa-star"></i></h2>
+        <h2 class="text-center">Film</h2>
         <ul class="movies mt-4">
             <FilmComponent v-for="film in films" :key="film.id" :filmElement="film"/>
         </ul>
