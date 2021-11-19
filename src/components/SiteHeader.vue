@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="logo">
-            <img src="../assets/logo.svg" alt="">
+            <img src="../assets/svg/logo.svg" alt="">
         </div>
         <div class="search text-center">
             <input v-model="filmSearch" type="search" placeholder="Cerca un Film" @keyup.enter="$emit('search_film', filmSearch)">

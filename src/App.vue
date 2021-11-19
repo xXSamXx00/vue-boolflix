@@ -55,16 +55,17 @@ body {
 }
 
 .img img {
+  max-width: 320px;
   max-height: 480px;
   object-fit: contain;
 }
 
 .text_over {
   display: none;
-  width: 342px;
+  width: 320px;
 }
 
-.serie {
+.card_element {
   &:hover {
     .img {
       display: none;
@@ -76,7 +77,8 @@ body {
   }
 }
 
-.movie {
+.movie,
+.serie {
   &:hover {
     .img {
       display: none;
