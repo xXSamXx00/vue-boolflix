@@ -1,14 +1,22 @@
 <template>
-    <li class="movie mb-3">
-        <img :src="`https://image.tmdb.org/t/p/w342/${filmElement.poster_path}`" alt="">
-        <p>{{ filmElement.title }}</p>
-        <p>{{ filmElement.original_title }}</p>
-        <div class="star">
-            <img height="20" v-for="star in parseInt((filmElement.vote_average / 2).toFixed(0))" :key="star.id" src="../assets/star-solid.svg" alt="">
-            <img height="20" v-for="emptyStar in parseInt(5 - (filmElement.vote_average / 2).toFixed(0))" :key="emptyStar.id" src="../assets/star-regular.svg" alt="">
+    <div class="movie col-3 mb-3">
+        <div class="img" >
+            <img v-if="filmElement.poster_path != null" :src="`https://image.tmdb.org/t/p/w342/${filmElement.poster_path}`" alt>
+            <img width="342" v-else src="https://media.istockphoto.com/vectors/internet-error-page-not-found-in-vertical-orientation-for-mobile-a-vector-id1252582562?k=20&m=1252582562&s=170667a&w=0&h=O1wwtikUXIdVVBKzIEDHvd9MDnwoeuClx90cuIq1SEo=" alt>
         </div>
-        <img height="30" class="my-3" :src="require(`../assets/${filmElement.original_language}.png`)" alt="">
-    </li>
+        <div class="text_over">
+            <p><strong>Titolo</strong>: {{ filmElement.title }}</p>
+            <p><strong>Titolo originale</strong>: {{ filmElement.original_title }}</p>
+            <div class="star">
+                <strong>Voto</strong>:
+                <img height="20" v-for="star in parseInt((filmElement.vote_average / 2).toFixed(0))" :key="star.id" src="../assets/star-solid.svg" alt="">
+                <img height="20" v-for="emptyStar in parseInt(5 - (filmElement.vote_average / 2).toFixed(0))" :key="emptyStar.id" src="../assets/star-regular.svg" alt="">
+            </div>
+            <strong>Language</strong>:
+            <img height="30" class="my-3" :src="require(`../assets/${filmElement.original_language}.png`)" alt="">
+            <p><strong>Overview</strong>: {{ filmElement.overview }}</p>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -21,8 +29,6 @@ export default {
 
 <style lang="scss">
 .movie {
-    width: 400px;
-    background-color: cornflowerblue;
     border: 1px solid black;
     border-radius: 5px;
     padding: 16px 20px 0;

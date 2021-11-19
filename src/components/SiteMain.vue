@@ -1,13 +1,13 @@
 <template>
     <div>
         <h2 class="text-center">Film</h2>
-        <ul class="movies mt-4">
+        <div class="movies mt-4">
             <FilmComponent v-for="film in films" :key="film.id" :filmElement="film"/>
-        </ul>
+        </div>
         <h2 class="text-center">Serie TV</h2>
-        <ul class="series mt-4">
+        <div class="series mt-4">
             <SerieElement v-for="serie in series" :key="serie.id" :serieElement="serie"/>
-        </ul>
+        </div>
     </div>
 </template>
 
@@ -31,12 +31,7 @@ export default {
 h2 {
     font-size: 20px;
 }
-.movies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    list-style: none;  
-}
+.movies,
 .series {
     display: flex;
     flex-wrap: wrap;

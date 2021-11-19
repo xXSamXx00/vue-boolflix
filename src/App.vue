@@ -49,5 +49,42 @@ export default {
 
 <style lang="scss">
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+body {
+  background-color: black;
+  color: white;
+}
 
+.img img {
+  max-height: 480px;
+  object-fit: contain;
+}
+
+.text_over {
+  display: none;
+  width: 342px;
+}
+
+.serie {
+  &:hover {
+    .img {
+      display: none;
+    }
+    .text_over {
+      display: block;
+      background-color: black;
+    }
+  }
+}
+
+.movie {
+  &:hover {
+    .img {
+      display: none;
+    }
+    .text_over {
+      display: block;
+      background-color: black;
+    }
+  }
+}
 </style>
