@@ -67,21 +67,6 @@ body {
 }
 
 .card_element {
-  display: flex;
-  justify-content: center;
-  &:hover {
-    .img {
-      display: none;
-    }
-    .text_over {
-      display: block;
-      background-color: black;
-    }
-  }
-}
-
-.movie,
-.serie {
   &:hover {
     .img {
       display: none;

@@ -13,7 +13,7 @@
                     <img height="20" v-for="star in parseInt((filmElement.vote_average / 2).toFixed(0))" :key="star.id" src="../assets/svg/star-solid.svg" alt="">
                     <img height="20" v-for="emptyStar in parseInt(5 - (filmElement.vote_average / 2).toFixed(0))" :key="emptyStar.id" src="../assets/svg/star-regular.svg" alt="">
                 </div>
-                <strong>Language</strong>:
+                <strong>Lingua</strong>:
                 <img height="30" class="my-3" :src="require(`../assets/flag/${filmElement.original_language}.png`)" alt="">
                 <p><strong>Overview</strong>: {{ filmElement.overview }}</p>
             </div>
@@ -32,6 +32,8 @@ export default {
 <style lang="scss">
 .card_element {
     margin-right: 50px;
+    width: 320px;
+    height: 480px;
 }
 
 .movie {

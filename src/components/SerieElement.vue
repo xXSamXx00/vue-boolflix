@@ -13,7 +13,7 @@
                     <img height="20" v-for="star in parseInt((serieElement.vote_average / 2).toFixed(0))" :key="star.id" src="../assets/svg/star-solid.svg" alt="">
                     <img height="20" v-for="emptyStar in parseInt(5 - (serieElement.vote_average / 2).toFixed(0))" :key="emptyStar.id" src="../assets/svg/star-regular.svg" alt="">
                 </div>
-                <strong>Language</strong>:
+                <strong>Lingua</strong>:
                 <img height="30" class="my-3" :src="require(`../assets/flag/${serieElement.original_language}.png`)" alt="">
                 <p><strong>Overview</strong>: {{ serieElement.overview }}</p>
             </div>
@@ -30,6 +30,12 @@ export default {
 </script>
 
 <style lang="scss">
+.card_element {
+    margin-right: 50px;
+    width: 320px;
+    height: 480px;
+}
+
 .serie {
     display: flex;
     justify-content: center;
