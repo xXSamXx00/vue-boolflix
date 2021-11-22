@@ -58,36 +58,42 @@ body {
   position: relative;
 }
 
+.img > img {
+  transition: 1s;
+  height: 450px;
+  width: 300px;
+}
+
 .text_over {
   position: absolute;
   top: 0;
   height: 0%;
   width: 100%;
   filter: opacity(0);
-  transition: 1s;
+  transition: 1.5s;
   visibility: hidden;
   text-align: center;
   padding: 20px;
+  .overview::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: red;
+  }
 }
 
 .overview {
   overflow-y: auto;
-  height: 40%;
-}
-
-.text_over::-webkit-scrollbar {
-  border-radius: 10px;
+  height: 100%;
 }
 
 .card_element {
   height: 500px;
   &:hover {
     .img > img {
-      filter: opacity(0.5);
+      filter: opacity(0.5) blur(5px);
     }
     .text_over {
       visibility: visible;
-      height: 100%;
+      height: 430px;
       filter: opacity(1);
     }
   }
