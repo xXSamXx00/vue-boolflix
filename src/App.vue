@@ -54,26 +54,41 @@ body {
   color: white;
 }
 
-.img img {
-  max-width: 320px;
-  max-height: 480px;
-  object-fit: contain;
+.img {
+  position: relative;
 }
 
 .text_over {
-  display: none;
-  width: 320px;
+  position: absolute;
+  top: -50px;
+  height: 40%;
+  width: 100%;
+  filter: opacity(0);
+  transition: 1s;
+  visibility: hidden;
   text-align: center;
+  padding: 20px;
+}
+
+.overview {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.text_over::-webkit-scrollbar {
+  border-radius: 10px;
 }
 
 .card_element {
+  height: 500px;
   &:hover {
-    .img {
-      display: none;
+    .img > img {
+      filter: opacity(0.5);
     }
     .text_over {
-      display: block;
-      background-color: black;
+      visibility: visible;
+      top: 0;
+      filter: opacity(1);
     }
   }
 }
