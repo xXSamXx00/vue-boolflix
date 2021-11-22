@@ -60,8 +60,8 @@ body {
 
 .text_over {
   position: absolute;
-  top: -50px;
-  height: 40%;
+  top: 0;
+  height: 0%;
   width: 100%;
   filter: opacity(0);
   transition: 1s;
@@ -72,7 +72,7 @@ body {
 
 .overview {
   overflow-y: auto;
-  height: 100%;
+  height: 40%;
 }
 
 .text_over::-webkit-scrollbar {
@@ -87,7 +87,7 @@ body {
     }
     .text_over {
       visibility: visible;
-      top: 0;
+      height: 100%;
       filter: opacity(1);
     }
   }
