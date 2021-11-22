@@ -74,15 +74,17 @@ body {
   visibility: hidden;
   text-align: center;
   padding: 20px;
-  .overview::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: red;
+  .overview{
+    ::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: red;
+    }
   }
 }
 
 .overview {
   overflow-y: auto;
-  height: 100%;
+  height: 40%;
 }
 
 .card_element {

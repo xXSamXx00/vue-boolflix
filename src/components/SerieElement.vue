@@ -14,7 +14,7 @@
                     </div>
                     <strong>Lingua</strong>:
                     <img height="30" class="my-3" :src="require(`../assets/flag/${serieElement.original_language}.png`)" alt="">
-                    <p><strong>Overview</strong>: {{ serieElement.overview }}</p>
+                    <p class="overview"><strong>Overview</strong>: {{ serieElement.overview }}</p>
                 </div>
             </div>
         </div>
